@@ -1,0 +1,39 @@
+{
+  "default":"en",
+  "en":{
+    "appName":"Snapper",
+    "stk":"Select Stick",
+	"stkHelp":"Stick needs to be proportional!",
+	"snapStatus":"Snapper Status:",
+	"lowAct":"Low Activation Point",
+	"highAct":"High Activation Point",
+	"lowDeAct":"Low Deactivation Point",
+	"highDeAct":"High Deactivation Point",
+	"ctrlName":"Snapper Switch",
+	"ctrlNameSh":"SP1"
+  },
+  "de":{
+    "appName":"Snapper",
+    "stk":"Wählen Sie Stick",
+	"stkHelp":"Halten Sie muss proportional zu sein!",
+	"snapStatus":"Snapper Status:",
+	"lowAct":"Niedrige Aktivierungspunkt",
+	"highAct":"Hohe Aktivierungspunkt",
+	"lowDeAct":"Niedrige Ausschaltpunktes",
+	"highDeAct":"Hohe Ausschaltpunktes",
+	"ctrlName":"Snapper Schalter",
+	"ctrlNameSh":"SP1"
+  },
+  "fr":{
+    "appName":"Snapper",
+    "stk":"Sélectionnez bâton",
+	"stkHelp":"Bâton doit être proportionnelle!",
+	"snapStatus":"Snapper Statut:",
+	"lowAct":"Point d'activation Faible",
+	"highAct":"Point d'activation Haute",
+	"lowDeAct":"Point de dectivation Faible",
+	"highDeAct":"Point de dectivation Haute",
+	"ctrlName":"Snapper Interrupteur",
+	"ctrlNameSh":"SP1"
+  }
+}

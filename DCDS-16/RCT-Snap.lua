@@ -77,7 +77,7 @@ end
 -- Draw the main form (Application inteface)
 local function initForm()
 	form.addRow(1)
-	form.addLabel({label="---     RC-Thoughts Jeti Tools      ---",font=FONT_BIG})
+	form.addLabel({label="---   RC-Thoughts Jeti Tools    ---",font=FONT_BIG})
 	
 	form.addRow(2)
 	form.addLabel({label=trans5.stk,width=220})
@@ -145,6 +145,6 @@ local function init()
 	system.setControl(1,0,0,0)
 end
 --------------------------------------------------------------------------------
-snapVersion = "1.0"
+snapVersion = "1.1"
 setLanguage()
 return {init=init,loop=loop,author="RC-Thoughts",version=snapVersion,name=trans5.appName} 	

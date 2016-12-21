@@ -3,8 +3,10 @@ Jeti LUA application to make fuzzy logic a lot easier
 
 Current info available on https://www.rc-thoughts.com/2016/08/rc-thoughts-tools/
 
+Same functions for DC/DS-16 and DC/DS-24
+
 Installation:
-- Copy RCT-Snap.lua to DC/DS-24 SD-card to /Apps folder
+- Copy RCT-Snap.lua to transmitters SD-card to /Apps folder
 - If you have no "Lang" folder in /Apps create it
 - Copy Lang/RCT-Snap.jsn to transmitters /Apps/Lang folder
 - Run application in transmitter
