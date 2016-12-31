@@ -145,6 +145,6 @@ local function init()
 	system.setControl(1,0,0,0)
 end
 --------------------------------------------------------------------------------
-snapVersion = "1.1"
+snapVersion = "1.2"
 setLanguage()
 return {init=init,loop=loop,author="RC-Thoughts",version=snapVersion,name=trans5.appName} 	

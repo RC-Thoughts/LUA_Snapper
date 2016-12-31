@@ -35,5 +35,17 @@
 	"highDeAct":"Point de dectivation Haute",
 	"ctrlName":"Snapper Interrupteur",
 	"ctrlNameSh":"SP1"
+  },
+  “it":{
+	"appName":"Snapper",
+	"stk":"Seleziona Stick",
+	"stkHelp":"Lo Stick deve essere proporzionale!",
+	"snapStatus":"Stato Snapper:",
+	"lowAct":"Punto attivazione basso",
+	"highAct":"Punto attivazione alto",
+	"lowDeAct":"Punto disattivazione basso",
+	"highDeAct":"Punto disattivazione alto",
+	"ctrlName":"Switch Snapper",
+	"ctrlNameSh":"SP1"
   }
 }
