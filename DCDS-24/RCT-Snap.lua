@@ -13,7 +13,7 @@
 	---------------------------------------------------------
 	Snapper is part of RC-Thoughts Jeti Tools.
 	---------------------------------------------------------
-	Released under MIT-license by Tero @ RC-Thoughts.com 2016
+	Released under MIT-license by Tero @ RC-Thoughts.com 2017
 	---------------------------------------------------------
 --]]
 --------------------------------------------------------------------------------
@@ -110,10 +110,11 @@ local function printForm()
 	lcd.drawText(203,50,trans5.snapStatus,FONT_MINI)
 	lcd.drawText(284,50,snapStatus, FONT_MINI)
 end
+--------------------------------------------------------------------------------
 local function loop()
 	if(uStick) then
 		stkSnap = system.getInputsVal(uStick)
-		if((stkSnap) and stkSnap > -1.0 and stkSnap < 1.0 and (hAct) and (lAct) and (hDact) and (lDact)) then
+		if((stkSnap) and stkSnap >= -1.0 and stkSnap <= 1.0 and (hAct) and (lAct) and (hDact) and (lDact)) then
 			if(stkSnap < lActV or stkSnap > hActV) then
 				system.setControl(1,1,0,0)
 				snapStatus = "On"
@@ -123,7 +124,6 @@ local function loop()
 					snapStatus = "Off"
 				end
 			end
-			else
 		end
 	end
 end
@@ -145,6 +145,6 @@ local function init()
 	system.setControl(1,0,0,0)
 end
 --------------------------------------------------------------------------------
-snapVersion = "1.2"
+snapVersion = "1.3"
 setLanguage()
-return {init=init,loop=loop,author="RC-Thoughts",version=snapVersion,name=trans5.appName} 	
+return {init=init,loop=loop,author="RC-Thoughts",version=snapVersion,name=trans5.appName}
