@@ -115,11 +115,11 @@ local function loop()
 	if(uStick) then
 		stkSnap = system.getInputsVal(uStick)
 		if((stkSnap) and stkSnap >= -1.0 and stkSnap <= 1.0 and (hAct) and (lAct) and (hDact) and (lDact)) then
-			if(stkSnap < lActV or stkSnap > hActV) then
+			if(stkSnap <= lActV or stkSnap >= hActV) then
 				system.setControl(1,1,0,0)
 				snapStatus = "On"
 				else
-				if(stkSnap > lDactV and stkSnap < hDactV) then
+				if(stkSnap >= lDactV and stkSnap <= hDactV) then
 					system.setControl(1,0,0,0)
 					snapStatus = "Off"
 				end
