@@ -16,6 +16,7 @@
 	Released under MIT-license by Tero @ RC-Thoughts.com 2017
 	---------------------------------------------------------
 --]]
+collectgarbage()
 --------------------------------------------------------------------------------
 -- Locals for application
 local hAct, lAct, hDact, lDact, snapStatus
@@ -129,12 +130,12 @@ local function loop()
 end
 --------------------------------------------------------------------------------
 local function init()
-	system.registerForm(1,MENU_APPS, trans5.appName,initForm,nil,printForm)
-	uStick = system.pLoad("uStick")
-	lAct = system.pLoad("lAct",0)
-	hAct = system.pLoad("hAct",0)
-	lDact = system.pLoad("lDact",0)
-	hDact = system.pLoad("hDact",0)
+    local pLoad = system.pLoad
+	uStick = pLoad("uStick")
+	lAct = pLoad("lAct",0)
+	hAct = pLoad("hAct",0)
+	lDact = pLoad("lDact",0)
+	hDact = pLoad("hDact",0)
 	hActV = (hAct*0.01)
 	lActV = (lAct*0.01)
 	hDactV = (hDact*0.01)
@@ -142,9 +143,12 @@ local function init()
 	snapStatus = "Off"
 	system.unregisterControl(1)
 	system.registerControl(1,trans5.ctrlName,trans5.ctrlNameSh)
+    system.registerForm(1,MENU_APPS, trans5.appName,initForm,nil,printForm)
 	system.setControl(1,0,0,0)
+    collectgarbage()
 end
 --------------------------------------------------------------------------------
-snapVersion = "1.3"
+snapVersion = "1.4"
 setLanguage()
+collectgarbage()
 return {init=init,loop=loop,author="RC-Thoughts",version=snapVersion,name=trans5.appName}
