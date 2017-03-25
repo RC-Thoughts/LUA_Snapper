@@ -16,37 +16,20 @@
 	Released under MIT-license by Tero @ RC-Thoughts.com 2017
 	---------------------------------------------------------
 --]]
+collectgarbage()
 --------------------------------------------------------------------------------
 -- Locals for application
 local hAct, lAct, hDact, lDact, snapStatus
 local hActV, lActV, hDactV, lDactV, uStick
 --------------------------------------------------------------------------------
--- Function for translation file-reading
-local function readFile(path) 
-	local f = io.open(path,"r")
-	local lines={}
-	if(f) then
-		while 1 do 
-			local buf=io.read(f,512)
-			if(buf ~= "")then 
-				lines[#lines+1] = buf
-				else
-				break   
-			end   
-		end 
-		io.close(f)
-		return table.concat(lines,"") 
-	end
-end 
---------------------------------------------------------------------------------
 -- Read translations
-local function setLanguage()	
-	local lng=system.getLocale();
-	local file = readFile("Apps/Lang/RCT-Snap.jsn")
-	local obj = json.decode(file)  
-	if(obj) then
-		trans5 = obj[lng] or obj[obj.default]
-	end
+local function setLanguage()
+    local lng=system.getLocale()
+    local file = io.readall("Apps/Lang/RCT-Snap.jsn")
+    local obj = json.decode(file)
+    if(obj) then
+        trans5 = obj[lng] or obj[obj.default]
+    end
 end
 --------------------------------------------------------------------------------
 local function uStickChanged(value)
@@ -126,6 +109,7 @@ local function loop()
 			end
 		end
 	end
+    collectgarbage()
 end
 --------------------------------------------------------------------------------
 local function init()
@@ -143,8 +127,10 @@ local function init()
 	system.unregisterControl(1)
 	system.registerControl(1,trans5.ctrlName,trans5.ctrlNameSh)
 	system.setControl(1,0,0,0)
+    collectgarbage()
 end
 --------------------------------------------------------------------------------
-snapVersion = "1.3"
+snapVersion = "1.5"
 setLanguage()
+collectgarbage()
 return {init=init,loop=loop,author="RC-Thoughts",version=snapVersion,name=trans5.appName}
