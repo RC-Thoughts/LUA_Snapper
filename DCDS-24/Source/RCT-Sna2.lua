@@ -25,7 +25,7 @@ local hActV, lActV, hDactV, lDactV, uStick
 -- Read translations
 local function setLanguage()
     local lng=system.getLocale()
-    local file = io.readall("Apps/Lang/RCT-Snap.jsn")
+    local file = io.readall("Apps/Lang/RCT-Sna2.jsn")
     local obj = json.decode(file)
     if(obj) then
         trans5 = obj[lng] or obj[obj.default]
@@ -60,7 +60,7 @@ end
 -- Draw the main form (Application inteface)
 local function initForm()
 	form.addRow(1)
-	form.addLabel({label="---   RC-Thoughts Jeti Tools    ---",font=FONT_BIG})
+	form.addLabel({label="---     RC-Thoughts Jeti Tools      ---",font=FONT_BIG})
 	
 	form.addRow(2)
 	form.addLabel({label=trans5.stk,width=220})
@@ -113,12 +113,12 @@ local function loop()
 end
 --------------------------------------------------------------------------------
 local function init()
-    local pLoad = system.pLoad
-	uStick = pLoad("uStick")
-	lAct = pLoad("lAct",0)
-	hAct = pLoad("hAct",0)
-	lDact = pLoad("lDact",0)
-	hDact = pLoad("hDact",0)
+	system.registerForm(1,MENU_APPS, trans5.appName,initForm,nil,printForm)
+	uStick = system.pLoad("uStick")
+	lAct = system.pLoad("lAct",0)
+	hAct = system.pLoad("hAct",0)
+	lDact = system.pLoad("lDact",0)
+	hDact = system.pLoad("hDact",0)
 	hActV = (hAct*0.01)
 	lActV = (lAct*0.01)
 	hDactV = (hDact*0.01)
@@ -126,7 +126,6 @@ local function init()
 	snapStatus = "Off"
 	system.unregisterControl(1)
 	system.registerControl(1,trans5.ctrlName,trans5.ctrlNameSh)
-    system.registerForm(1,MENU_APPS, trans5.appName,initForm,nil,printForm)
 	system.setControl(1,0,0,0)
     collectgarbage()
 end
